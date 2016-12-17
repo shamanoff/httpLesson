@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<div class="row">
+  <div class="medium-12 columns">
+
+    <form>
+      <div class="row">
+
+        <label>UserName
+          <input type="text" id="username" #username placeholder="">
+        </label>
+
+
+        <label>Email
+          <input type="text" id="email" #email placeholder="">
+        </label>
+      </div>
+      <input (click)="onSubmit(username.value, email.value)" type="submit" class="button" value="Submit">
+
+
+    </form>
+    <hr/>
+    <input (click)="onGetData()" type="submit" class="button" value="GetData">
+    <ul>
+      <li *ngFor="let item of items">User: {{item.username}} | Email: {{item.email}}</li>
+    </ul>
+    <hr>
+    <p>{{asyncString | async}}</p>
+  </div>
+</div>
